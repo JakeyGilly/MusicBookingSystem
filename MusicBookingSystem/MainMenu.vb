@@ -1,8 +1,8 @@
 ﻿Imports MusicBookingSystem.DataStructures
 Public Class MainMenu
-    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If username <> "Anonymous" Then
-            lblWelcome.Text = lblWelcome.Text + username
+    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
+        If currentlyLoggedInUser.Username <> anonUser.Username Then
+            lblWelcome.Text = lblWelcome.Text + currentlyLoggedInUser.Username
             btnLogin.Hide()
         Else
             lblWelcome.Hide()
@@ -27,8 +27,18 @@ Public Class MainMenu
         timetable.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnLesson_Click(sender As Object, e As EventArgs) Handles btnLesson.Click
         Me.Hide()
         amendLesson.Show()
+    End Sub
+
+    Private Sub btnRoom_Click(sender As Object, e As EventArgs) Handles btnRoom.Click
+        Me.Hide()
+        amendRoom.Show()
+    End Sub
+
+    Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
+        Me.Hide()
+        amendUser.Show()
     End Sub
 End Class

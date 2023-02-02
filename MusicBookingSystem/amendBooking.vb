@@ -1,11 +1,30 @@
 ﻿Imports MusicBookingSystem.BookingFileHandler
+Imports MusicBookingSystem.UserFileHandler
+Imports MusicBookingSystem.RoomFileHandler
 Imports MusicBookingSystem.DataStructures
 Public Class amendBooking
     Public index As Integer = 0
     Public IdFile As String = "bookingId.txt"
-    Private Sub amendBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub amendBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Shown
         ReadBookings()
-        comboRoom.Items.AddRange({"Practice Room 1", "Practice Room 2", "Practice Room 3", "Studio", "Drum Room", "Back Room"})
+        ReadUsers()
+        ReadRooms()
+        For Each Room In roomDataArray
+            If (Room.Name <> Nothing) Then
+                comboRoom.Items.Add(Room.Name)
+            End If
+        Next
+        If (currentlyLoggedInUser.UserType = "Admin") Then
+            For Each User In userDataArray
+                If (User.Username <> Nothing) Then
+                    comboUser.Items.Add(User.Username)
+                End If
+            Next
+        ElseIf (currentlyLoggedInUser.Username = anonUser.Username) Then
+            comboUser.Items.Add("Not Logged In")
+        Else
+            comboUser.Items.Add(currentlyLoggedInUser.Username)
+        End If
         UpdateBookingBoxes()
     End Sub
 
@@ -13,7 +32,7 @@ Public Class amendBooking
         Dim newId As Integer = getNewID()
         index = bookingMaxIndex
         txtId.Text = newId
-        txtUser.Text = username
+        comboUser.SelectedIndex = -1
         comboRoom.SelectedIndex = -1
         txtPeriod.Text = ""
         datepick.Text = ""
@@ -87,16 +106,16 @@ Public Class amendBooking
 
     Sub UpdateBookingBoxes()
         txtId.Text = bookingDataArray(index).Id
-        txtUser.Text = bookingDataArray(index).Username
-        comboRoom.SelectedIndex = comboRoom.Items.IndexOf(bookingDataArray(index).Roomname)
+        comboUser.SelectedIndex = comboUser.Items.IndexOf(bookingDataArray(index).User.Username)
+        comboRoom.SelectedIndex = comboRoom.Items.IndexOf(bookingDataArray(index).Room.Name)
         txtPeriod.Text = bookingDataArray(index).Period
         datepick.Text = bookingDataArray(index).Day
     End Sub
 
     Sub UpdateBookingArray()
         bookingDataArray(index).Id = txtId.Text
-        bookingDataArray(index).Username = txtUser.Text
-        bookingDataArray(index).Roomname = comboRoom.SelectedItem
+        bookingDataArray(index).User = userDataArray(comboUser.SelectedIndex)
+        bookingDataArray(index).Room = roomDataArray(comboRoom.SelectedIndex)
         bookingDataArray(index).Period = txtPeriod.Text
         bookingDataArray(index).Day = datepick.Text
     End Sub

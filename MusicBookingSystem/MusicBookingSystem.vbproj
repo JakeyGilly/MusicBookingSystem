@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="amendlesson.vb">
+    <Compile Update="amendRoom.vb" />
+    <Compile Update="amendUser.vb" />
+    <Compile Update="amendLesson.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="My Project\Application.Designer.vb">

@@ -7,6 +7,7 @@ Public Class amendLesson
         ReadLessons()
         comboSubject.Items.AddRange({"Music Tech DMP", "Music"})
         comboTeacher.Items.AddRange({"Simon Lee", "James Quested"})
+        comboDay.Items.AddRange({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"})
         UpdateLessonBoxes()
     End Sub
     Private Sub btnNewBooking_Click(sender As Object, e As EventArgs) Handles btnNewLesson.Click
@@ -16,7 +17,7 @@ Public Class amendLesson
         comboSubject.SelectedIndex = -1
         comboTeacher.SelectedIndex = -1
         txtPeriod.Text = ""
-        datepick.Text = ""
+        comboDay.SelectedIndex = -1
     End Sub
 
     Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
@@ -37,7 +38,7 @@ Public Class amendLesson
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         UpdateLessonArray()
         WriteLessons()
         If (index = lessonMaxIndex) Then
@@ -52,7 +53,7 @@ Public Class amendLesson
         f1.Show()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         For i = index To lessonMaxIndex
             lessonDataArray(i) = lessonDataArray(i + 1)
         Next
@@ -90,7 +91,7 @@ Public Class amendLesson
         comboTeacher.SelectedIndex = comboTeacher.Items.IndexOf(lessonDataArray(index).Teacher)
         comboSubject.SelectedIndex = comboSubject.Items.IndexOf(lessonDataArray(index).Subject)
         txtPeriod.Text = lessonDataArray(index).Period
-        datepick.Text = lessonDataArray(index).Day
+        comboDay.SelectedIndex = comboTeacher.Items.IndexOf(lessonDataArray(index).Day)
     End Sub
 
     Sub UpdateLessonArray()
@@ -98,6 +99,6 @@ Public Class amendLesson
         lessonDataArray(index).Teacher = comboTeacher.SelectedItem
         lessonDataArray(index).Subject = comboSubject.SelectedItem
         lessonDataArray(index).Period = txtPeriod.Text
-        lessonDataArray(index).Day = datepick.Text
+        lessonDataArray(index).Day = comboDay.SelectedItem
     End Sub
 End Class

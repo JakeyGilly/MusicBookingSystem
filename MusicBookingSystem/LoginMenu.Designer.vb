@@ -23,30 +23,23 @@ Partial Class LoginMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.lblName = New System.Windows.Forms.Label()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblUsername = New System.Windows.Forms.Label()
+        Me.lblPassword = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(49, 54)
+        Me.txtUsername.Location = New System.Drawing.Point(78, 39)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(100, 23)
         Me.txtUsername.TabIndex = 0
         '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(70, 27)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(90, 15)
-        Me.lblName.TabIndex = 1
-        Me.lblName.Text = "Enter Username"
-        '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(12, 98)
+        Me.btnSubmit.Location = New System.Drawing.Point(12, 126)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(75, 23)
         Me.btnSubmit.TabIndex = 2
@@ -55,21 +48,48 @@ Partial Class LoginMenu
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(110, 98)
+        Me.btnBack.Location = New System.Drawing.Point(110, 126)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 3
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = True
         '
+        'txtPassword
+        '
+        Me.txtPassword.Location = New System.Drawing.Point(78, 82)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(100, 23)
+        Me.txtPassword.TabIndex = 4
+        '
+        'lblUsername
+        '
+        Me.lblUsername.AutoSize = True
+        Me.lblUsername.Location = New System.Drawing.Point(12, 42)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Size = New System.Drawing.Size(60, 15)
+        Me.lblUsername.TabIndex = 5
+        Me.lblUsername.Text = "Username"
+        '
+        'lblPassword
+        '
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Location = New System.Drawing.Point(12, 85)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(57, 15)
+        Me.lblPassword.TabIndex = 6
+        Me.lblPassword.Text = "Password"
+        '
         'LoginMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(228, 181)
+        Me.ClientSize = New System.Drawing.Size(217, 183)
+        Me.Controls.Add(Me.lblPassword)
+        Me.Controls.Add(Me.lblUsername)
+        Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnSubmit)
-        Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.txtUsername)
         Me.Name = "LoginMenu"
         Me.Text = "LoginMenu"
@@ -79,7 +99,9 @@ Partial Class LoginMenu
     End Sub
 
     Friend WithEvents txtUsername As TextBox
-    Friend WithEvents lblName As Label
     Friend WithEvents btnSubmit As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblUsername As Label
+    Friend WithEvents lblPassword As Label
 End Class

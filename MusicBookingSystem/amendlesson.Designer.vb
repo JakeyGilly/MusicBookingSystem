@@ -24,20 +24,20 @@ Partial Class amendLesson
     Private Sub InitializeComponent()
         Me.lblTeacher = New System.Windows.Forms.Label()
         Me.lblPeriod = New System.Windows.Forms.Label()
-        Me.lblDate = New System.Windows.Forms.Label()
+        Me.lblDay = New System.Windows.Forms.Label()
         Me.comboSubject = New System.Windows.Forms.ComboBox()
         Me.txtPeriod = New System.Windows.Forms.TextBox()
         Me.btnNewLesson = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrev = New System.Windows.Forms.Button()
-        Me.datepick = New System.Windows.Forms.DateTimePicker()
         Me.lblSubject = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.lblId = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.comboTeacher = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.comboDay = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'lblTeacher
@@ -58,14 +58,14 @@ Partial Class amendLesson
         Me.lblPeriod.TabIndex = 1
         Me.lblPeriod.Text = "Period"
         '
-        'lblDate
+        'lblDay
         '
-        Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(37, 194)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(31, 15)
-        Me.lblDate.TabIndex = 2
-        Me.lblDate.Text = "Date"
+        Me.lblDay.AutoSize = True
+        Me.lblDay.Location = New System.Drawing.Point(37, 194)
+        Me.lblDay.Name = "lblDay"
+        Me.lblDay.Size = New System.Drawing.Size(27, 15)
+        Me.lblDay.TabIndex = 2
+        Me.lblDay.Text = "Day"
         '
         'comboSubject
         '
@@ -108,13 +108,6 @@ Partial Class amendLesson
         Me.btnPrev.TabIndex = 10
         Me.btnPrev.Text = "Previous"
         Me.btnPrev.UseVisualStyleBackColor = True
-        '
-        'datepick
-        '
-        Me.datepick.Location = New System.Drawing.Point(101, 194)
-        Me.datepick.Name = "datepick"
-        Me.datepick.Size = New System.Drawing.Size(144, 23)
-        Me.datepick.TabIndex = 11
         '
         'lblSubject
         '
@@ -167,34 +160,42 @@ Partial Class amendLesson
         Me.comboTeacher.Size = New System.Drawing.Size(144, 23)
         Me.comboTeacher.TabIndex = 18
         '
-        'Button1
+        'btnDelete
         '
-        Me.Button1.Location = New System.Drawing.Point(287, 78)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Delete"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnDelete.Location = New System.Drawing.Point(287, 78)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 19
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'comboDay
+        '
+        Me.comboDay.FormattingEnabled = True
+        Me.comboDay.Location = New System.Drawing.Point(101, 194)
+        Me.comboDay.Name = "comboDay"
+        Me.comboDay.Size = New System.Drawing.Size(144, 23)
+        Me.comboDay.TabIndex = 20
         '
         'amendLesson
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(411, 355)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.comboDay)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.comboTeacher)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblSubject)
-        Me.Controls.Add(Me.datepick)
         Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.btnNewLesson)
         Me.Controls.Add(Me.txtPeriod)
         Me.Controls.Add(Me.comboSubject)
-        Me.Controls.Add(Me.lblDate)
+        Me.Controls.Add(Me.lblDay)
         Me.Controls.Add(Me.lblPeriod)
         Me.Controls.Add(Me.lblTeacher)
         Me.Name = "amendLesson"
@@ -206,18 +207,18 @@ Partial Class amendLesson
 
     Friend WithEvents lblTeacher As Label
     Friend WithEvents lblPeriod As Label
-    Friend WithEvents lblDate As Label
+    Friend WithEvents lblDay As Label
     Friend WithEvents comboSubject As ComboBox
     Friend WithEvents txtPeriod As TextBox
     Friend WithEvents btnNewLesson As Button
     Friend WithEvents btnNext As Button
     Friend WithEvents btnPrev As Button
-    Friend WithEvents datepick As DateTimePicker
     Friend WithEvents lblSubject As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents txtId As TextBox
     Friend WithEvents lblId As Label
     Friend WithEvents btnBack As Button
     Friend WithEvents comboTeacher As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents comboDay As ComboBox
 End Class

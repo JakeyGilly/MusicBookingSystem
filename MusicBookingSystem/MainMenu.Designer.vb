@@ -28,7 +28,9 @@ Partial Class MainMenu
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.btnBooking = New System.Windows.Forms.Button()
         Me.btnTimetable = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLesson = New System.Windows.Forms.Button()
+        Me.btnUser = New System.Windows.Forms.Button()
+        Me.btnRoom = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnDebug
@@ -86,21 +88,41 @@ Partial Class MainMenu
         Me.btnTimetable.Text = "Timetable"
         Me.btnTimetable.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnLesson
         '
-        Me.Button1.Location = New System.Drawing.Point(497, 226)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "lesson"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnLesson.Location = New System.Drawing.Point(497, 226)
+        Me.btnLesson.Name = "btnLesson"
+        Me.btnLesson.Size = New System.Drawing.Size(75, 23)
+        Me.btnLesson.TabIndex = 6
+        Me.btnLesson.Text = "Lesson"
+        Me.btnLesson.UseVisualStyleBackColor = True
+        '
+        'btnUser
+        '
+        Me.btnUser.Location = New System.Drawing.Point(255, 300)
+        Me.btnUser.Name = "btnUser"
+        Me.btnUser.Size = New System.Drawing.Size(75, 23)
+        Me.btnUser.TabIndex = 7
+        Me.btnUser.Text = "User"
+        Me.btnUser.UseVisualStyleBackColor = True
+        '
+        'btnRoom
+        '
+        Me.btnRoom.Location = New System.Drawing.Point(407, 300)
+        Me.btnRoom.Name = "btnRoom"
+        Me.btnRoom.Size = New System.Drawing.Size(75, 23)
+        Me.btnRoom.TabIndex = 8
+        Me.btnRoom.Text = "Room"
+        Me.btnRoom.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnRoom)
+        Me.Controls.Add(Me.btnUser)
+        Me.Controls.Add(Me.btnLesson)
         Me.Controls.Add(Me.btnTimetable)
         Me.Controls.Add(Me.btnBooking)
         Me.Controls.Add(Me.lblWelcome)
@@ -120,5 +142,7 @@ Partial Class MainMenu
     Friend WithEvents lblWelcome As Label
     Friend WithEvents btnBooking As Button
     Friend WithEvents btnTimetable As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLesson As Button
+    Friend WithEvents btnUser As Button
+    Friend WithEvents btnRoom As Button
 End Class

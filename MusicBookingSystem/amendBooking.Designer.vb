@@ -31,13 +31,13 @@ Partial Class amendBooking
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrev = New System.Windows.Forms.Button()
         Me.datepick = New System.Windows.Forms.DateTimePicker()
-        Me.txtUser = New System.Windows.Forms.TextBox()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.lblId = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.comboUser = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'lblRoom
@@ -116,13 +116,6 @@ Partial Class amendBooking
         Me.datepick.Size = New System.Drawing.Size(144, 23)
         Me.datepick.TabIndex = 11
         '
-        'txtUser
-        '
-        Me.txtUser.Location = New System.Drawing.Point(101, 79)
-        Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(144, 23)
-        Me.txtUser.TabIndex = 13
-        '
         'lblUser
         '
         Me.lblUser.AutoSize = True
@@ -175,17 +168,25 @@ Partial Class amendBooking
         Me.Button1.Text = "Delete"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'comboUser
+        '
+        Me.comboUser.FormattingEnabled = True
+        Me.comboUser.Location = New System.Drawing.Point(101, 79)
+        Me.comboUser.Name = "comboUser"
+        Me.comboUser.Size = New System.Drawing.Size(144, 23)
+        Me.comboUser.TabIndex = 19
+        '
         'amendBooking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(411, 355)
+        Me.Controls.Add(Me.comboUser)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.btnSave)
-        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.datepick)
         Me.Controls.Add(Me.btnPrev)
@@ -212,11 +213,11 @@ End Sub
     Friend WithEvents btnNext As Button
     Friend WithEvents btnPrev As Button
     Friend WithEvents datepick As DateTimePicker
-    Friend WithEvents txtUser As TextBox
     Friend WithEvents lblUser As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents txtId As TextBox
     Friend WithEvents lblId As Label
     Friend WithEvents btnBack As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents comboUser As ComboBox
 End Class

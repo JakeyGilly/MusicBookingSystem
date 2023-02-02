@@ -28,6 +28,10 @@ Partial Class FileDebugger
         Me.btnLesson = New System.Windows.Forms.Button()
         Me.btnSearchBookings = New System.Windows.Forms.Button()
         Me.btnSearchLessons = New System.Windows.Forms.Button()
+        Me.btnSearchRooms = New System.Windows.Forms.Button()
+        Me.btnSearchUser = New System.Windows.Forms.Button()
+        Me.btnRoom = New System.Windows.Forms.Button()
+        Me.btnUser = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lstOutput
@@ -41,7 +45,7 @@ Partial Class FileDebugger
         '
         'btnBooking
         '
-        Me.btnBooking.Location = New System.Drawing.Point(527, 121)
+        Me.btnBooking.Location = New System.Drawing.Point(529, 37)
         Me.btnBooking.Name = "btnBooking"
         Me.btnBooking.Size = New System.Drawing.Size(112, 41)
         Me.btnBooking.TabIndex = 1
@@ -59,7 +63,7 @@ Partial Class FileDebugger
         '
         'btnLesson
         '
-        Me.btnLesson.Location = New System.Drawing.Point(527, 168)
+        Me.btnLesson.Location = New System.Drawing.Point(529, 84)
         Me.btnLesson.Name = "btnLesson"
         Me.btnLesson.Size = New System.Drawing.Size(112, 41)
         Me.btnLesson.TabIndex = 4
@@ -68,7 +72,7 @@ Partial Class FileDebugger
         '
         'btnSearchBookings
         '
-        Me.btnSearchBookings.Location = New System.Drawing.Point(527, 274)
+        Me.btnSearchBookings.Location = New System.Drawing.Point(529, 219)
         Me.btnSearchBookings.Name = "btnSearchBookings"
         Me.btnSearchBookings.Size = New System.Drawing.Size(144, 23)
         Me.btnSearchBookings.TabIndex = 5
@@ -77,18 +81,58 @@ Partial Class FileDebugger
         '
         'btnSearchLessons
         '
-        Me.btnSearchLessons.Location = New System.Drawing.Point(527, 303)
+        Me.btnSearchLessons.Location = New System.Drawing.Point(529, 248)
         Me.btnSearchLessons.Name = "btnSearchLessons"
         Me.btnSearchLessons.Size = New System.Drawing.Size(144, 23)
         Me.btnSearchLessons.TabIndex = 6
         Me.btnSearchLessons.Text = "Search Lessons By Id"
         Me.btnSearchLessons.UseVisualStyleBackColor = True
         '
+        'btnSearchRooms
+        '
+        Me.btnSearchRooms.Location = New System.Drawing.Point(529, 307)
+        Me.btnSearchRooms.Name = "btnSearchRooms"
+        Me.btnSearchRooms.Size = New System.Drawing.Size(144, 23)
+        Me.btnSearchRooms.TabIndex = 10
+        Me.btnSearchRooms.Text = "Search Rooms By Id"
+        Me.btnSearchRooms.UseVisualStyleBackColor = True
+        '
+        'btnSearchUser
+        '
+        Me.btnSearchUser.Location = New System.Drawing.Point(529, 278)
+        Me.btnSearchUser.Name = "btnSearchUser"
+        Me.btnSearchUser.Size = New System.Drawing.Size(144, 23)
+        Me.btnSearchUser.TabIndex = 9
+        Me.btnSearchUser.Text = "Search Users By Id"
+        Me.btnSearchUser.UseVisualStyleBackColor = True
+        '
+        'btnRoom
+        '
+        Me.btnRoom.Location = New System.Drawing.Point(529, 172)
+        Me.btnRoom.Name = "btnRoom"
+        Me.btnRoom.Size = New System.Drawing.Size(112, 41)
+        Me.btnRoom.TabIndex = 8
+        Me.btnRoom.Text = "Read Rooms"
+        Me.btnRoom.UseVisualStyleBackColor = True
+        '
+        'btnUser
+        '
+        Me.btnUser.Location = New System.Drawing.Point(529, 125)
+        Me.btnUser.Name = "btnUser"
+        Me.btnUser.Size = New System.Drawing.Size(112, 41)
+        Me.btnUser.TabIndex = 7
+        Me.btnUser.Text = "Read User"
+        Me.btnUser.UseVisualStyleBackColor = True
+        '
         'FileDebugger
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 407)
+        Me.Controls.Add(Me.btnSearchRooms)
+        Me.Controls.Add(Me.btnSearchUser)
+        Me.Controls.Add(Me.btnRoom)
+        Me.Controls.Add(Me.btnUser)
         Me.Controls.Add(Me.btnSearchLessons)
         Me.Controls.Add(Me.btnSearchBookings)
         Me.Controls.Add(Me.btnLesson)
@@ -107,4 +151,8 @@ End Sub
     Friend WithEvents btnLesson As Button
     Friend WithEvents btnSearchBookings As Button
     Friend WithEvents btnSearchLessons As Button
+    Friend WithEvents btnSearchRooms As Button
+    Friend WithEvents btnSearchUser As Button
+    Friend WithEvents btnRoom As Button
+    Friend WithEvents btnUser As Button
 End Class
