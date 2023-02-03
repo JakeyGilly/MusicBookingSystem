@@ -26,7 +26,7 @@ Public Class BookingFileHandler
 	Public Shared Sub WriteBookings()
 		FileOpen(1, fileName, OpenMode.Output)
 		For i = 0 To bookingMaxIndex - 1
-			WriteLine(1, bookingDataArray(i).Id, bookingDataArray(i).User, bookingDataArray(i).Room, bookingDataArray(i).Period, bookingDataArray(i).Day)
+			WriteLine(1, bookingDataArray(i).Id, bookingDataArray(i).User.Id, bookingDataArray(i).Room.Id, bookingDataArray(i).Period, bookingDataArray(i).Day)
 		Next
 		FileClose(1)
 	End Sub
