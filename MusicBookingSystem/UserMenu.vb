@@ -17,7 +17,9 @@ Public Class UserMenu
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        ' Log the user out
         currentlyLoggedInUser = Nothing
+        ' Send the user back to the login menu
         Me.Hide()
         LoginMenu.Show()
     End Sub

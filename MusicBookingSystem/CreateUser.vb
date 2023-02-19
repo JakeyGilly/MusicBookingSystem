@@ -13,6 +13,7 @@ Public Class CreateUser
         comboUserType.Items.AddRange({"Admin", "User"})
         ' Disable the input boxes
         txtId.Enabled = False
+        ' Set the id
         index = userMaxIndex
         txtId.Text = GetNewId(IdFile)
     End Sub
@@ -34,6 +35,7 @@ Public Class CreateUser
         ' Save the data to the files
         WriteUsers()
         MsgBox("User created")
+        ' Send the user back to the login menu
         Me.Hide()
         LoginMenu.Show()
     End Sub

@@ -27,11 +27,13 @@ Public Class LoginMenu
     End Sub
 
     Private Sub lnkForgottenPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkForgottenPassword.LinkClicked
+        ' Send the user to the forgotten password menu
         Me.Hide()
         ForgottenPassword.Show()
     End Sub
 
     Private Sub btnNewUser_Click(sender As Object, e As EventArgs) Handles btnNewUser.Click
+        ' Send the user to the create user menu
         Me.Hide()
         CreateUser.Show()
     End Sub
