@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class timetable
+Partial Class Timetable
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,6 +26,8 @@ Partial Class timetable
         Me.btnBack = New System.Windows.Forms.Button()
         Me.lblTimetable = New System.Windows.Forms.Label()
         Me.comboRoom = New System.Windows.Forms.ComboBox()
+        Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnPrev = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,17 +67,37 @@ Partial Class timetable
         Me.comboRoom.Size = New System.Drawing.Size(284, 23)
         Me.comboRoom.TabIndex = 3
         '
-        'timetable1
+        'btnNext
+        '
+        Me.btnNext.Location = New System.Drawing.Point(666, 48)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(75, 23)
+        Me.btnNext.TabIndex = 4
+        Me.btnNext.Text = "Next"
+        Me.btnNext.UseVisualStyleBackColor = True
+        '
+        'btnPrev
+        '
+        Me.btnPrev.Location = New System.Drawing.Point(48, 48)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrev.TabIndex = 5
+        Me.btnPrev.Text = "Previous"
+        Me.btnPrev.UseVisualStyleBackColor = True
+        '
+        'timetable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnPrev)
+        Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.comboRoom)
         Me.Controls.Add(Me.lblTimetable)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Name = "timetable1"
-        Me.Text = "timetable1"
+        Me.Name = "Timetable"
+        Me.Text = "Timetable"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -91,4 +113,6 @@ Partial Class timetable
     Friend WithEvents btnBack As Button
     Friend WithEvents lblTimetable As Label
     Friend WithEvents comboRoom As ComboBox
+    Friend WithEvents btnNext As Button
+    Friend WithEvents btnPrev As Button
 End Class
