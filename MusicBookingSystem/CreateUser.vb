@@ -22,7 +22,12 @@ Public Class CreateUser
         ' Check if all fields are filled in
         If Not MassPresenceCheck({txtUsername.Text, txtPassword.Text}) And comboUserType.SelectedIndex <> -1 Then
             MsgBox("Please fill in all fields")
-            Exit Sub
+            Return
+        End If
+        ' Check if the password field is over or equal to 7 characters
+        If Not MinimumLengthCheck(txtPassword.Text, 7) And Not MaximumLengthCheck(txtPassword.Text, 16) Then
+            MsgBox("Password does not meet password requirements")
+            Return
         End If
         ' Update the user data
         userDataArray(index).Id = txtId.Text
@@ -36,6 +41,12 @@ Public Class CreateUser
         WriteUsers()
         MsgBox("User created")
         ' Send the user back to the login menu
+        Me.Hide()
+        LoginMenu.Show()
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        ' Return to the login menu
         Me.Hide()
         LoginMenu.Show()
     End Sub

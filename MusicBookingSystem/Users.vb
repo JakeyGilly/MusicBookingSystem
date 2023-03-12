@@ -14,9 +14,8 @@ Public Class Users
         comboUserType.DropDownStyle = ComboBoxStyle.DropDownList
         comboUserType.Items.AddRange({"Admin", "User"})
         ' Populate the list box with the users
-        Dim users = Array.FindAll(userDataArray, Function(x) x.Username <> Nothing)
-        For Each user In users
-            lstUsers.Items.Add(user.Id)
+        For i = 0 To userMaxIndex - 1
+            lstUsers.Items.Add(userDataArray(i).Id)
         Next
         ' Disable the input boxes
         chkUpdate.Checked = False
@@ -29,9 +28,20 @@ Public Class Users
     Private Sub lstUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsers.SelectedIndexChanged
         ' If the user has selected a user, update the input boxes
         If lstUsers.SelectedIndex = -1 Then
-            Exit Sub
+            Return
         End If
-        index = Array.FindIndex(userDataArray, Function(x) x.Id = lstUsers.SelectedItem)
+        Dim tempIndex As Integer = -1
+        For i = 0 To userMaxIndex - 1
+            If userDataArray(i).Id = lstUsers.SelectedItem Then
+                tempIndex = i
+            End If
+        Next
+        If tempIndex <> -1 Then
+            index = tempIndex
+        Else
+            MsgBox("Error selecting item.")
+            Return
+        End If
         UpdateUserBoxes()
     End Sub
 
@@ -46,7 +56,12 @@ Public Class Users
         ' Check if all fields are filled in
         If Not MassPresenceCheck({txtUsername.Text, txtPassword.Text}) And comboUserType.SelectedIndex <> -1 Then
             MsgBox("Please fill in all fields")
-            Exit Sub
+            Return
+        End If
+        ' Check if the password field is over or equal to 7 characters
+        If Not MinimumLengthCheck(txtPassword.Text, 7) And Not MaximumLengthCheck(txtPassword.Text, 16) Then
+            MsgBox("Password does not meet password requirements")
+            Return
         End If
         ' Update the user data
         UpdateUserArray()
@@ -84,7 +99,7 @@ Public Class Users
             index -= 1
             newUser = False
             UpdateUserBoxes()
-            Exit Sub
+            Return
         End If
         ' If the user is not new, ask the user if they are sure they want to delete it
         Dim result = MsgBox("Are you sure you want to delete this user?", MsgBoxStyle.YesNo)

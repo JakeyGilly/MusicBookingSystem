@@ -11,23 +11,21 @@ Public Class Timetable
         ReadBookings()
         ReadLessons()
         ' Populate the combo box with the room names
-        For Each Room In roomDataArray
-            If (Room.Name <> Nothing) Then
-                comboRoom.Items.Add(Room.Name)
-            End If
+        For i = 0 To roomMaxIndex - 1
+            comboRoom.Items.Add(roomDataArray(i).Name)
         Next
         ' Set up the timetable
-        DataGridView1.ColumnCount = 5
-        DataGridView1.RowCount = 5
+        dataTimetable.ColumnCount = 5
+        dataTimetable.RowCount = 5
         comboRoom.SelectedIndex = 0
         comboRoom.DropDownStyle = ComboBoxStyle.DropDownList
-        DataGridView1.ReadOnly = True
+        dataTimetable.ReadOnly = True
         Dim times() = {"8:50-10:20", "10:40-12:10", "Lunch", "13:00-14:30", "14:40-16:10"}
         Dim days() = getNextFiveDays()
         ' Set the column and row headers
         For i = 0 To 4
-            DataGridView1.Columns(i).HeaderCell.Value = days(i)
-            DataGridView1.Rows(i).HeaderCell.Value = times(i)
+            dataTimetable.Columns(i).HeaderCell.Value = days(i)
+            dataTimetable.Rows(i).HeaderCell.Value = times(i)
         Next
         ' Populate the timetable
         UpdateTimetable(roomDataArray(comboRoom.Items.IndexOf(comboRoom.SelectedItem)))
@@ -43,7 +41,7 @@ Public Class Timetable
         StartOfWeek = StartOfWeek.AddDays(7)
         Dim days() = getNextFiveDays()
         For i = 0 To 4
-            DataGridView1.Columns(i).HeaderCell.Value = days(i)
+            dataTimetable.Columns(i).HeaderCell.Value = days(i)
         Next
         ' Populate the timetable
         UpdateTimetable(roomDataArray(comboRoom.Items.IndexOf(comboRoom.SelectedItem)))
@@ -54,7 +52,7 @@ Public Class Timetable
         StartOfWeek = StartOfWeek.AddDays(-7)
         Dim days() = getNextFiveDays()
         For i = 0 To 4
-            DataGridView1.Columns(i).HeaderCell.Value = days(i)
+            dataTimetable.Columns(i).HeaderCell.Value = days(i)
         Next
         ' Populate the timetable
         UpdateTimetable(roomDataArray(comboRoom.Items.IndexOf(comboRoom.SelectedItem)))
@@ -64,7 +62,7 @@ Public Class Timetable
         ' Clear the timetable
         For i = 0 To 4
             For j = 0 To 4
-                DataGridView1.Rows(i).Cells(j).Value = ""
+                dataTimetable.Rows(i).Cells(j).Value = ""
             Next
         Next
         ' Populate the timetable  with bookings
@@ -75,7 +73,7 @@ Public Class Timetable
                 Dim day As Integer = Booking.Day.DayOfWeek - DayOfWeek.Monday
                 Dim time As Integer = Booking.Period
                 ' Set the cell value
-                DataGridView1.Rows(time).Cells(day).Value = $"Booked by {Booking.User.Username}"
+                dataTimetable.Rows(time).Cells(day).Value = $"Booked by {Booking.User.Username}"
             End If
         Next
         ' Populate the timetable with lessons
@@ -86,7 +84,7 @@ Public Class Timetable
             Dim day As Integer = Lesson.Day
             Dim time As Integer = Lesson.Period
             ' Set the cell value
-            DataGridView1.Rows(time).Cells(day).Value = $"Lesson: {Lesson.Subject} {Lesson.Teacher}"
+            dataTimetable.Rows(time).Cells(day).Value = $"Lesson: {Lesson.Subject} {Lesson.Teacher}"
         Next
     End Sub
 
@@ -100,8 +98,12 @@ Public Class Timetable
     End Function
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        ' Go back to the user menu
+        ' Return to the main menu
         Me.Hide()
-        UserMenu.Show()
+        If (currentlyLoggedInUser.UserType = "Admin") Then
+            AdminMenu.Show()
+        Else
+            UserMenu.Show()
+        End If
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UserMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,30 +20,30 @@ Partial Class UserMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.btnBooking = New System.Windows.Forms.Button()
         Me.btnTimetable = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblSubtitle = New System.Windows.Forms.Label()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblTitle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(283, 56)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(255, 32)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Music Booking System"
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTitle.Location = New System.Drawing.Point(170, 9)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(255, 32)
+        Me.lblTitle.TabIndex = 1
+        Me.lblTitle.Text = "Music Booking System"
         '
         'lblWelcome
         '
         Me.lblWelcome.AutoSize = True
-        Me.lblWelcome.Location = New System.Drawing.Point(644, 47)
+        Me.lblWelcome.Location = New System.Drawing.Point(12, 9)
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(38, 15)
         Me.lblWelcome.TabIndex = 3
@@ -51,35 +51,35 @@ Partial Class UserMenu
         '
         'btnBooking
         '
-        Me.btnBooking.Location = New System.Drawing.Point(236, 221)
+        Me.btnBooking.Location = New System.Drawing.Point(292, 159)
         Me.btnBooking.Name = "btnBooking"
-        Me.btnBooking.Size = New System.Drawing.Size(84, 32)
+        Me.btnBooking.Size = New System.Drawing.Size(100, 50)
         Me.btnBooking.TabIndex = 4
         Me.btnBooking.Text = "Booking"
         Me.btnBooking.UseVisualStyleBackColor = True
         '
         'btnTimetable
         '
-        Me.btnTimetable.Location = New System.Drawing.Point(494, 226)
+        Me.btnTimetable.Location = New System.Drawing.Point(186, 159)
         Me.btnTimetable.Name = "btnTimetable"
-        Me.btnTimetable.Size = New System.Drawing.Size(75, 23)
+        Me.btnTimetable.Size = New System.Drawing.Size(100, 50)
         Me.btnTimetable.TabIndex = 5
         Me.btnTimetable.Text = "Timetable"
         Me.btnTimetable.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblSubtitle
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(283, 116)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 32)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "User Menu"
+        Me.lblSubtitle.AutoSize = True
+        Me.lblSubtitle.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblSubtitle.Location = New System.Drawing.Point(221, 45)
+        Me.lblSubtitle.Name = "lblSubtitle"
+        Me.lblSubtitle.Size = New System.Drawing.Size(131, 32)
+        Me.lblSubtitle.TabIndex = 9
+        Me.lblSubtitle.Text = "User Menu"
         '
         'btnLogout
         '
-        Me.btnLogout.Location = New System.Drawing.Point(633, 77)
+        Me.btnLogout.Location = New System.Drawing.Point(12, 27)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(75, 23)
         Me.btnLogout.TabIndex = 10
@@ -90,23 +90,23 @@ Partial Class UserMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(584, 361)
         Me.Controls.Add(Me.btnLogout)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblSubtitle)
         Me.Controls.Add(Me.btnTimetable)
         Me.Controls.Add(Me.btnBooking)
         Me.Controls.Add(Me.lblWelcome)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblTitle)
         Me.Name = "UserMenu"
         Me.Text = "UserMenu"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblTitle As Label
     Friend WithEvents lblWelcome As Label
     Friend WithEvents btnBooking As Button
     Friend WithEvents btnTimetable As Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblSubtitle As Label
     Friend WithEvents btnLogout As Button
 End Class

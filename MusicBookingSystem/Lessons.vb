@@ -18,9 +18,8 @@ Public Class Lessons
         comboTeacher.Items.AddRange({"Simon Lee", "James Quested"})
         comboDay.Items.AddRange({"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"})
         ' Populate the list box with the lessons
-        Dim lessons = Array.FindAll(lessonDataArray, Function(x) x.Id <> Nothing)
-        For Each lesson In lessons
-            lstLessons.Items.Add(lesson.Id)
+        For i = 0 To lessonMaxIndex - 1
+            lstLessons.Items.Add(lessonDataArray(i).Id)
         Next
         ' Disable the input boxes
         chkUpdate.Checked = False
@@ -34,9 +33,20 @@ Public Class Lessons
     Private Sub lstLessons_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstLessons.SelectedIndexChanged
         ' If the user has selected a lesson, update the input boxes
         If lstLessons.SelectedIndex = -1 Then
-            Exit Sub
+            Return
         End If
-        index = Array.FindIndex(lessonDataArray, Function(x) x.Id = lstLessons.SelectedItem)
+        Dim tempIndex As Integer = -1
+        For i = 0 To lessonMaxIndex - 1
+            If lessonDataArray(i).Id = lstLessons.SelectedItem Then
+                tempIndex = i
+            End If
+        Next
+        If tempIndex <> -1 Then
+            index = tempIndex
+        Else
+            MsgBox("Error selecting item.")
+            Return
+        End If
         UpdateLessonBoxes()
     End Sub
 
@@ -50,9 +60,9 @@ Public Class Lessons
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ' Check if all fields are filled in
-        If Not PresenceCheck(numPeriod.Text) And comboSubject.SelectedIndex <> -1 And comboTeacher.SelectedIndex <> -1 And comboDay.SelectedIndex <> -1 Then
+        If Not PresenceCheck(numPeriod.Text) And comboSubject.SelectedIndex <> -1 And comboTeacher.SelectedIndex <> -1 And comboDay.SelectedIndex <> -1 And RangeCheck(numPeriod.Value, 0, 4) Then
             MsgBox("Please fill in all fields")
-            Exit Sub
+            Return
         End If
         ' Update the lesson data
         UpdateLessonArray()
@@ -91,7 +101,7 @@ Public Class Lessons
             index -= 1
             newLesson = False
             UpdateLessonBoxes()
-            Exit Sub
+            Return
         End If
         ' If the lesson is not new, ask the user if they are sure they want to delete it
         Dim result = MsgBox("Are you sure you want to delete this lesson?", MsgBoxStyle.YesNo)

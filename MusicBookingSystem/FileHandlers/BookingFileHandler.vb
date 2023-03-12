@@ -1,6 +1,7 @@
 ﻿Imports MusicBookingSystem.DataStructures
 Imports MusicBookingSystem.UserFileHandler
 Imports MusicBookingSystem.RoomFileHandler
+Imports MusicBookingSystem.SearchAlgorithms
 Public Class BookingFileHandler
 	Const fileName As String = "bookings.txt"
 	Public Shared Sub ReadBookings()
@@ -18,9 +19,9 @@ Public Class BookingFileHandler
 		While Not EOF(1)
 			Input(1, bookingDataArray(bookingMaxIndex).Id)
 			Input(1, tempUser)
-			bookingDataArray(bookingMaxIndex).User = userDataArray.First(Function(x) x.Id = tempUser)
+			bookingDataArray(bookingMaxIndex).User = SearchUserId(tempUser)
 			Input(1, tempRoom)
-			bookingDataArray(bookingMaxIndex).Room = roomDataArray.First(Function(x) x.Id = tempRoom)
+			bookingDataArray(bookingMaxIndex).Room = SearchRoomId(tempRoom)
 			Input(1, bookingDataArray(bookingMaxIndex).Period)
 			Input(1, bookingDataArray(bookingMaxIndex).Day)
 			' increment the max index

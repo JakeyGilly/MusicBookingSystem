@@ -31,26 +31,26 @@ Partial Class Users
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.btnNewUser = New System.Windows.Forms.Button()
-        Me.comboUserType = New System.Windows.Forms.ComboBox()
-        Me.lblUserType = New System.Windows.Forms.Label()
-        Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.comboUserType = New System.Windows.Forms.ComboBox()
+        Me.lblUserType = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lstUsers
         '
         Me.lstUsers.FormattingEnabled = True
         Me.lstUsers.ItemHeight = 15
-        Me.lstUsers.Location = New System.Drawing.Point(541, 87)
+        Me.lstUsers.Location = New System.Drawing.Point(230, 12)
         Me.lstUsers.Name = "lstUsers"
-        Me.lstUsers.Size = New System.Drawing.Size(169, 214)
+        Me.lstUsers.Size = New System.Drawing.Size(247, 259)
         Me.lstUsers.TabIndex = 0
         '
         'chkUpdate
         '
         Me.chkUpdate.AutoSize = True
-        Me.chkUpdate.Location = New System.Drawing.Point(116, 258)
+        Me.chkUpdate.Location = New System.Drawing.Point(16, 216)
         Me.chkUpdate.Name = "chkUpdate"
         Me.chkUpdate.Size = New System.Drawing.Size(64, 19)
         Me.chkUpdate.TabIndex = 36
@@ -59,16 +59,16 @@ Partial Class Users
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(365, 101)
+        Me.btnDelete.Location = New System.Drawing.Point(139, 12)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.Size = New System.Drawing.Size(85, 39)
         Me.btnDelete.TabIndex = 34
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(376, 340)
+        Me.btnBack.Location = New System.Drawing.Point(149, 243)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 33
@@ -77,7 +77,7 @@ Partial Class Users
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(180, 67)
+        Me.txtId.Location = New System.Drawing.Point(80, 71)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(144, 23)
         Me.txtId.TabIndex = 32
@@ -85,7 +85,7 @@ Partial Class Users
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(116, 67)
+        Me.lblId.Location = New System.Drawing.Point(16, 71)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(17, 15)
         Me.lblId.TabIndex = 31
@@ -93,7 +93,7 @@ Partial Class Users
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(115, 301)
+        Me.btnSave.Location = New System.Drawing.Point(16, 243)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 30
@@ -103,7 +103,7 @@ Partial Class Users
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
-        Me.lblUsername.Location = New System.Drawing.Point(116, 99)
+        Me.lblUsername.Location = New System.Drawing.Point(16, 103)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(60, 15)
         Me.lblUsername.TabIndex = 29
@@ -111,59 +111,62 @@ Partial Class Users
         '
         'btnNewUser
         '
-        Me.btnNewUser.Location = New System.Drawing.Point(366, 44)
+        Me.btnNewUser.Location = New System.Drawing.Point(48, 12)
         Me.btnNewUser.Name = "btnNewUser"
         Me.btnNewUser.Size = New System.Drawing.Size(85, 39)
         Me.btnNewUser.TabIndex = 27
-        Me.btnNewUser.Text = "Create New User"
+        Me.btnNewUser.Text = "Create New Users"
         Me.btnNewUser.UseVisualStyleBackColor = True
         '
-        'comboUserType
+        'txtUsername
         '
-        Me.comboUserType.FormattingEnabled = True
-        Me.comboUserType.Location = New System.Drawing.Point(180, 174)
-        Me.comboUserType.Name = "comboUserType"
-        Me.comboUserType.Size = New System.Drawing.Size(144, 23)
-        Me.comboUserType.TabIndex = 26
+        Me.txtUsername.Location = New System.Drawing.Point(80, 100)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(144, 23)
+        Me.txtUsername.TabIndex = 37
         '
-        'lblUserType
+        'txtPassword
         '
-        Me.lblUserType.AutoSize = True
-        Me.lblUserType.Location = New System.Drawing.Point(116, 177)
-        Me.lblUserType.Name = "lblUserType"
-        Me.lblUserType.Size = New System.Drawing.Size(57, 15)
-        Me.lblUserType.TabIndex = 24
-        Me.lblUserType.Text = "User Type"
+        Me.txtPassword.Location = New System.Drawing.Point(80, 129)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(144, 23)
+        Me.txtPassword.TabIndex = 39
         '
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(116, 137)
+        Me.lblPassword.Location = New System.Drawing.Point(16, 132)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(57, 15)
-        Me.lblPassword.TabIndex = 23
+        Me.lblPassword.TabIndex = 38
         Me.lblPassword.Text = "Password"
         '
-        'txtUsername
+        'comboUserType
         '
-        Me.txtUsername.Location = New System.Drawing.Point(180, 96)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(144, 23)
-        Me.txtUsername.TabIndex = 38
+        Me.comboUserType.FormattingEnabled = True
+        Me.comboUserType.Location = New System.Drawing.Point(80, 158)
+        Me.comboUserType.Name = "comboUserType"
+        Me.comboUserType.Size = New System.Drawing.Size(144, 23)
+        Me.comboUserType.TabIndex = 40
         '
-        'txtPassword
+        'lblUserType
         '
-        Me.txtPassword.Location = New System.Drawing.Point(179, 134)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(144, 23)
-        Me.txtPassword.TabIndex = 39
+        Me.lblUserType.AutoSize = True
+        Me.lblUserType.Location = New System.Drawing.Point(16, 161)
+        Me.lblUserType.Name = "lblUserType"
+        Me.lblUserType.Size = New System.Drawing.Size(57, 15)
+        Me.lblUserType.TabIndex = 41
+        Me.lblUserType.Text = "User Type"
         '
         'Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(488, 285)
+        Me.Controls.Add(Me.lblUserType)
+        Me.Controls.Add(Me.comboUserType)
         Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.chkUpdate)
         Me.Controls.Add(Me.btnDelete)
@@ -173,12 +176,9 @@ Partial Class Users
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.btnNewUser)
-        Me.Controls.Add(Me.comboUserType)
-        Me.Controls.Add(Me.lblUserType)
-        Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lstUsers)
         Me.Name = "Users"
-        Me.Text = "UserBookings"
+        Me.Text = "Users"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -193,9 +193,9 @@ Partial Class Users
     Friend WithEvents btnSave As Button
     Friend WithEvents lblUsername As Label
     Friend WithEvents btnNewUser As Button
-    Friend WithEvents comboUserType As ComboBox
-    Friend WithEvents lblUserType As Label
-    Friend WithEvents lblPassword As Label
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblPassword As Label
+    Friend WithEvents comboUserType As ComboBox
+    Friend WithEvents lblUserType As Label
 End Class

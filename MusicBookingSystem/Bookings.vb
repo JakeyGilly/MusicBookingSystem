@@ -4,6 +4,7 @@ Imports MusicBookingSystem.RoomFileHandler
 Imports MusicBookingSystem.UserFileHandler
 Imports MusicBookingSystem.Validation
 Imports MusicBookingSystem.Algorithms
+Imports MusicBookingSystem.SearchAlgorithms
 
 Public Class Bookings
     Public index As Integer = 0
@@ -16,36 +17,47 @@ Public Class Bookings
         ReadRooms()
         ' Set up the input boxes
         comboRoom.DropDownStyle = ComboBoxStyle.DropDownList
-        For Each room In roomDataArray
-            If room.Name <> Nothing Then
-                comboRoom.Items.Add(room.Name)
-            End If
+        For i = 0 To roomMaxIndex - 1
+            comboRoom.Items.Add(roomDataArray(i).Name)
         Next
         ' Populate the list box with the bookings
-        Dim bookings As Booking()
         If currentlyLoggedInUser.UserType = "Admin" Then
-            bookings = Array.FindAll(bookingDataArray, Function(x) x.User.Username <> Nothing)
+            For i = 0 To bookingMaxIndex - 1
+                lstBookings.Items.Add(bookingDataArray(i).Id)
+            Next
         Else
-            bookings = Array.FindAll(bookingDataArray, Function(x) x.User.Id = currentlyLoggedInUser.Id)
+            For i = 0 To bookingMaxIndex - 1
+                If bookingDataArray(i).User.Id = currentlyLoggedInUser.Id Then
+                    lstBookings.Items.Add(bookingDataArray(i).Id)
+                End If
+            Next
         End If
-        For Each booking In bookings
-            lstBookings.Items.Add(booking.Id)
-        Next
         ' Disable the input boxes
         chkUpdate.Checked = False
         txtId.Enabled = False
         txtUser.Enabled = False
         comboRoom.Enabled = False
         numPeriod.Enabled = False
-        datepick.Enabled = False
+        datePick.Enabled = False
     End Sub
 
     Private Sub lstBookings_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstBookings.SelectedIndexChanged
         ' If the user has selected a booking, update the input boxes
         If lstBookings.SelectedIndex = -1 Then
-            Exit Sub
+            Return
         End If
-        index = Array.FindIndex(bookingDataArray, Function(x) x.Id = lstBookings.SelectedItem)
+        Dim tempIndex As Integer = -1
+        For i = 0 To bookingMaxIndex - 1
+            If bookingDataArray(i).Id = lstBookings.SelectedItem Then
+                tempIndex = i
+            End If
+        Next
+        If tempIndex <> -1 Then
+            index = tempIndex
+        Else
+            MsgBox("Error selecting item.")
+            Return
+        End If
         UpdateBookingBoxes()
     End Sub
 
@@ -53,24 +65,24 @@ Public Class Bookings
         ' Enable or disable the input boxes
         comboRoom.Enabled = chkUpdate.Checked
         numPeriod.Enabled = chkUpdate.Checked
-        datepick.Enabled = chkUpdate.Checked
+        datePick.Enabled = chkUpdate.Checked
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ' Check if all fields are filled in
-        If Not MassPresenceCheck({txtId.Text, txtUser.Text, comboRoom.Text, numPeriod.Text, datepick.Text}) Then
+        If Not MassPresenceCheck({txtId.Text, txtUser.Text, comboRoom.Text, numPeriod.Text, datePick.Text}) And RangeCheck(numPeriod.Value, 0, 4) Then
             MsgBox("Please fill in all fields")
-            Exit Sub
+            Return
         End If
         ' Check if the room is available
         For i = 0 To bookingMaxIndex - 1
-            If datepick.Value.ToLongDateString() = bookingDataArray(i).Day.ToLongDateString() And numPeriod.Value = bookingDataArray(i).Period Then
+            If datePick.Value.ToLongDateString() = bookingDataArray(i).Day.ToLongDateString() And numPeriod.Value = bookingDataArray(i).Period Then
                 MsgBox("Booking already at that time")
                 Return
             End If
         Next
         For i = 0 To lessonMaxIndex - 1
-            If (datepick.Value.DayOfWeek - DayOfWeek.Monday) = lessonDataArray(i).Day And numPeriod.Value = lessonDataArray(i).Period Then
+            If (datePick.Value.DayOfWeek - DayOfWeek.Monday) = lessonDataArray(i).Day And numPeriod.Value = lessonDataArray(i).Period Then
                 MsgBox("Lesson already at that time")
                 Return
             End If
@@ -98,7 +110,7 @@ Public Class Bookings
         txtUser.Text = currentlyLoggedInUser.Username
         comboRoom.SelectedIndex = 0
         numPeriod.Value = 0
-        datepick.Text = Date.Now
+        datePick.Text = Date.Now
         ' Set the index to the end of the array
         index = bookingMaxIndex
         newBooking = True
@@ -112,7 +124,7 @@ Public Class Bookings
             index -= 1
             newBooking = False
             UpdateBookingBoxes()
-            Exit Sub
+            Return
         End If
         ' If the booking is not new, ask the user if they are sure they want to delete it
         Dim result = MsgBox("Are you sure you want to delete this booking?", MsgBoxStyle.YesNo)
@@ -147,15 +159,15 @@ Public Class Bookings
         txtUser.Text = bookingDataArray(index).User.Username
         comboRoom.SelectedIndex = comboRoom.Items.IndexOf(bookingDataArray(index).Room.Name)
         numPeriod.Value = bookingDataArray(index).Period
-        datepick.Text = bookingDataArray(index).Day
+        datePick.Text = bookingDataArray(index).Day
     End Sub
 
     Sub UpdateBookingArray()
         ' Update the booking data array
         bookingDataArray(index).Id = txtId.Text
-        bookingDataArray(index).User = userDataArray.First(Function(x) x.Username = txtUser.Text)
+        bookingDataArray(index).User = SearchUserUsername(txtUser.Text)
         bookingDataArray(index).Room = roomDataArray(comboRoom.SelectedIndex)
         bookingDataArray(index).Period = numPeriod.Value
-        bookingDataArray(index).Day = datepick.Text
+        bookingDataArray(index).Day = datePick.Text
     End Sub
 End Class

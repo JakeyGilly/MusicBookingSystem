@@ -29,6 +29,7 @@ Partial Class ForgottenPassword
         Me.lblConfirm = New System.Windows.Forms.Label()
         Me.txtConfirm = New System.Windows.Forms.TextBox()
         Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtUsername
@@ -81,18 +82,28 @@ Partial Class ForgottenPassword
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(102, 127)
+        Me.btnSubmit.Location = New System.Drawing.Point(31, 127)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(75, 23)
         Me.btnSubmit.TabIndex = 6
         Me.btnSubmit.Text = "Submit"
         Me.btnSubmit.UseVisualStyleBackColor = True
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(166, 127)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 7
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'ForgottenPassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(294, 162)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.lblConfirm)
         Me.Controls.Add(Me.txtConfirm)
@@ -114,4 +125,5 @@ Partial Class ForgottenPassword
     Friend WithEvents lblConfirm As Label
     Friend WithEvents txtConfirm As TextBox
     Friend WithEvents btnSubmit As Button
+    Friend WithEvents btnBack As Button
 End Class

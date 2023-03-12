@@ -1,9 +1,10 @@
 ﻿Imports MusicBookingSystem.DataStructures
 Imports MusicBookingSystem.UserFileHandler
+Imports MusicBookingSystem.SearchAlgorithms
 Public Class LoginMenu
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         ' Fetch the user from the array
-        Dim user = userDataArray.FirstOrDefault(Function(u) u.Username = txtUsername.Text)
+        Dim user = SearchUserUsername(txtUsername.Text)
         ' Check if the user exists
         If (user.Password = txtPassword.Text) Then
             ' Set the currently logged in user

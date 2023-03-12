@@ -22,27 +22,28 @@ Partial Class Timetable
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dataTimetable = New System.Windows.Forms.DataGridView()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.lblTimetable = New System.Windows.Forms.Label()
         Me.comboRoom = New System.Windows.Forms.ComboBox()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnPrev = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataTimetable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dataTimetable
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(48, 85)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(696, 312)
-        Me.DataGridView1.TabIndex = 0
+        Me.dataTimetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataTimetable.Location = New System.Drawing.Point(42, 84)
+        Me.dataTimetable.Name = "dataTimetable"
+        Me.dataTimetable.RowHeadersWidth = 100
+        Me.dataTimetable.RowTemplate.Height = 25
+        Me.dataTimetable.Size = New System.Drawing.Size(605, 154)
+        Me.dataTimetable.TabIndex = 0
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(555, 403)
+        Me.btnBack.Location = New System.Drawing.Point(572, 244)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 1
@@ -53,23 +54,23 @@ Partial Class Timetable
         '
         Me.lblTimetable.AutoSize = True
         Me.lblTimetable.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblTimetable.Location = New System.Drawing.Point(274, 20)
+        Me.lblTimetable.Location = New System.Drawing.Point(288, 9)
         Me.lblTimetable.Name = "lblTimetable"
-        Me.lblTimetable.Size = New System.Drawing.Size(284, 32)
+        Me.lblTimetable.Size = New System.Drawing.Size(120, 32)
         Me.lblTimetable.TabIndex = 2
-        Me.lblTimetable.Text = "Timetable Booking Room"
+        Me.lblTimetable.Text = "Timetable"
         '
         'comboRoom
         '
         Me.comboRoom.FormattingEnabled = True
-        Me.comboRoom.Location = New System.Drawing.Point(274, 55)
+        Me.comboRoom.Location = New System.Drawing.Point(214, 44)
         Me.comboRoom.Name = "comboRoom"
         Me.comboRoom.Size = New System.Drawing.Size(284, 23)
         Me.comboRoom.TabIndex = 3
         '
         'btnNext
         '
-        Me.btnNext.Location = New System.Drawing.Point(666, 48)
+        Me.btnNext.Location = New System.Drawing.Point(572, 31)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(75, 23)
         Me.btnNext.TabIndex = 4
@@ -78,33 +79,33 @@ Partial Class Timetable
         '
         'btnPrev
         '
-        Me.btnPrev.Location = New System.Drawing.Point(48, 48)
+        Me.btnPrev.Location = New System.Drawing.Point(42, 31)
         Me.btnPrev.Name = "btnPrev"
         Me.btnPrev.Size = New System.Drawing.Size(75, 23)
         Me.btnPrev.TabIndex = 5
         Me.btnPrev.Text = "Previous"
         Me.btnPrev.UseVisualStyleBackColor = True
         '
-        'timetable
+        'Timetable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(684, 311)
         Me.Controls.Add(Me.btnPrev)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.comboRoom)
         Me.Controls.Add(Me.lblTimetable)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dataTimetable)
         Me.Name = "Timetable"
         Me.Text = "Timetable"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataTimetable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dataTimetable As DataGridView
     Friend WithEvents Monday As DataGridViewTextBoxColumn
     Friend WithEvents Tuesday As DataGridViewTextBoxColumn
     Friend WithEvents Wednesday As DataGridViewTextBoxColumn

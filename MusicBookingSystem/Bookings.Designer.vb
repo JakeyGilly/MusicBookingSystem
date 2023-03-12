@@ -31,7 +31,7 @@ Partial Class Bookings
         Me.lblId = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.lblUser = New System.Windows.Forms.Label()
-        Me.datepick = New System.Windows.Forms.DateTimePicker()
+        Me.datePick = New System.Windows.Forms.DateTimePicker()
         Me.btnNewBooking = New System.Windows.Forms.Button()
         Me.comboRoom = New System.Windows.Forms.ComboBox()
         Me.lblDate = New System.Windows.Forms.Label()
@@ -45,24 +45,23 @@ Partial Class Bookings
         '
         Me.lstBookings.FormattingEnabled = True
         Me.lstBookings.ItemHeight = 15
-        Me.lstBookings.Location = New System.Drawing.Point(541, 87)
+        Me.lstBookings.Location = New System.Drawing.Point(230, 12)
         Me.lstBookings.Name = "lstBookings"
-        Me.lstBookings.Size = New System.Drawing.Size(169, 214)
+        Me.lstBookings.Size = New System.Drawing.Size(247, 259)
         Me.lstBookings.TabIndex = 0
         '
         'numPeriod
         '
-        Me.numPeriod.Location = New System.Drawing.Point(180, 175)
+        Me.numPeriod.Location = New System.Drawing.Point(80, 158)
         Me.numPeriod.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.numPeriod.Name = "numPeriod"
         Me.numPeriod.Size = New System.Drawing.Size(144, 23)
         Me.numPeriod.TabIndex = 37
-        Me.numPeriod.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'chkUpdate
         '
         Me.chkUpdate.AutoSize = True
-        Me.chkUpdate.Location = New System.Drawing.Point(116, 258)
+        Me.chkUpdate.Location = New System.Drawing.Point(16, 216)
         Me.chkUpdate.Name = "chkUpdate"
         Me.chkUpdate.Size = New System.Drawing.Size(64, 19)
         Me.chkUpdate.TabIndex = 36
@@ -71,16 +70,16 @@ Partial Class Bookings
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(365, 101)
+        Me.btnDelete.Location = New System.Drawing.Point(139, 12)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.Size = New System.Drawing.Size(85, 39)
         Me.btnDelete.TabIndex = 34
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(376, 340)
+        Me.btnBack.Location = New System.Drawing.Point(149, 243)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 33
@@ -89,7 +88,7 @@ Partial Class Bookings
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(180, 67)
+        Me.txtId.Location = New System.Drawing.Point(80, 71)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(144, 23)
         Me.txtId.TabIndex = 32
@@ -97,7 +96,7 @@ Partial Class Bookings
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(116, 67)
+        Me.lblId.Location = New System.Drawing.Point(16, 71)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(17, 15)
         Me.lblId.TabIndex = 31
@@ -105,7 +104,7 @@ Partial Class Bookings
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(115, 301)
+        Me.btnSave.Location = New System.Drawing.Point(16, 243)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 30
@@ -115,22 +114,22 @@ Partial Class Bookings
         'lblUser
         '
         Me.lblUser.AutoSize = True
-        Me.lblUser.Location = New System.Drawing.Point(116, 99)
+        Me.lblUser.Location = New System.Drawing.Point(16, 103)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(30, 15)
         Me.lblUser.TabIndex = 29
         Me.lblUser.Text = "User"
         '
-        'datepick
+        'datePick
         '
-        Me.datepick.Location = New System.Drawing.Point(180, 214)
-        Me.datepick.Name = "datepick"
-        Me.datepick.Size = New System.Drawing.Size(144, 23)
-        Me.datepick.TabIndex = 28
+        Me.datePick.Location = New System.Drawing.Point(80, 187)
+        Me.datePick.Name = "datePick"
+        Me.datePick.Size = New System.Drawing.Size(144, 23)
+        Me.datePick.TabIndex = 28
         '
         'btnNewBooking
         '
-        Me.btnNewBooking.Location = New System.Drawing.Point(366, 44)
+        Me.btnNewBooking.Location = New System.Drawing.Point(48, 12)
         Me.btnNewBooking.Name = "btnNewBooking"
         Me.btnNewBooking.Size = New System.Drawing.Size(85, 39)
         Me.btnNewBooking.TabIndex = 27
@@ -140,7 +139,7 @@ Partial Class Bookings
         'comboRoom
         '
         Me.comboRoom.FormattingEnabled = True
-        Me.comboRoom.Location = New System.Drawing.Point(180, 134)
+        Me.comboRoom.Location = New System.Drawing.Point(80, 129)
         Me.comboRoom.Name = "comboRoom"
         Me.comboRoom.Size = New System.Drawing.Size(144, 23)
         Me.comboRoom.TabIndex = 26
@@ -148,7 +147,7 @@ Partial Class Bookings
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(116, 214)
+        Me.lblDate.Location = New System.Drawing.Point(16, 187)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(31, 15)
         Me.lblDate.TabIndex = 25
@@ -157,7 +156,7 @@ Partial Class Bookings
         'lblPeriod
         '
         Me.lblPeriod.AutoSize = True
-        Me.lblPeriod.Location = New System.Drawing.Point(116, 177)
+        Me.lblPeriod.Location = New System.Drawing.Point(16, 160)
         Me.lblPeriod.Name = "lblPeriod"
         Me.lblPeriod.Size = New System.Drawing.Size(41, 15)
         Me.lblPeriod.TabIndex = 24
@@ -166,7 +165,7 @@ Partial Class Bookings
         'lblRoom
         '
         Me.lblRoom.AutoSize = True
-        Me.lblRoom.Location = New System.Drawing.Point(116, 137)
+        Me.lblRoom.Location = New System.Drawing.Point(16, 132)
         Me.lblRoom.Name = "lblRoom"
         Me.lblRoom.Size = New System.Drawing.Size(39, 15)
         Me.lblRoom.TabIndex = 23
@@ -174,16 +173,16 @@ Partial Class Bookings
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(180, 96)
+        Me.txtUser.Location = New System.Drawing.Point(80, 100)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(144, 23)
         Me.txtUser.TabIndex = 38
         '
-        'UserBookings
+        'Bookings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(488, 285)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.numPeriod)
         Me.Controls.Add(Me.chkUpdate)
@@ -193,15 +192,15 @@ Partial Class Bookings
         Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblUser)
-        Me.Controls.Add(Me.datepick)
+        Me.Controls.Add(Me.datePick)
         Me.Controls.Add(Me.btnNewBooking)
         Me.Controls.Add(Me.comboRoom)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblPeriod)
         Me.Controls.Add(Me.lblRoom)
         Me.Controls.Add(Me.lstBookings)
-        Me.Name = "UserBookings"
-        Me.Text = "UserBookings"
+        Me.Name = "Bookings"
+        Me.Text = "Bookings"
         CType(Me.numPeriod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -217,7 +216,7 @@ Partial Class Bookings
     Friend WithEvents lblId As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents lblUser As Label
-    Friend WithEvents datepick As DateTimePicker
+    Friend WithEvents datePick As DateTimePicker
     Friend WithEvents btnNewBooking As Button
     Friend WithEvents comboRoom As ComboBox
     Friend WithEvents lblDate As Label

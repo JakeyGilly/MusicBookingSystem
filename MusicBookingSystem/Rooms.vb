@@ -11,9 +11,8 @@ Public Class Rooms
         ' Read all data from files
         ReadRooms()
         ' Populate the list box with the rooms
-        Dim rooms = Array.FindAll(roomDataArray, Function(x) x.Name <> Nothing)
-        For Each room In rooms
-            lstRooms.Items.Add(room.Id)
+        For i = 0 To roomMaxIndex - 1
+            lstRooms.Items.Add(roomDataArray(i).Id)
         Next
         ' Disable the input boxes
         chkUpdate.Checked = False
@@ -24,9 +23,20 @@ Public Class Rooms
     Private Sub lstRooms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstRooms.SelectedIndexChanged
         ' If the user has selected a room, update the input boxes
         If lstRooms.SelectedIndex = -1 Then
-            Exit Sub
+            Return
         End If
-        index = Array.FindIndex(roomDataArray, Function(x) x.Id = lstRooms.SelectedItem)
+        Dim tempIndex As Integer = -1
+        For i = 0 To roomMaxIndex - 1
+            If roomDataArray(i).Id = lstRooms.SelectedItem Then
+                tempIndex = i
+            End If
+        Next
+        If tempIndex <> -1 Then
+            index = tempIndex
+        Else
+            MsgBox("Error selecting item.")
+            Return
+        End If
         UpdateRoomBoxes()
     End Sub
 
@@ -39,7 +49,7 @@ Public Class Rooms
         ' Check if all fields are filled in
         If Not PresenceCheck(txtName.Text) Then
             MsgBox("Please fill in all fields")
-            Exit Sub
+            Return
         End If
         ' Update the room data
         UpdateRoomArray()
@@ -75,7 +85,7 @@ Public Class Rooms
             index -= 1
             newRoom = False
             UpdateRoomBoxes()
-            Exit Sub
+            Return
         End If
         ' If the room is not new, ask the user if they are sure they want to delete it
         Dim result = MsgBox("Are you sure you want to delete this room?", MsgBoxStyle.YesNo)

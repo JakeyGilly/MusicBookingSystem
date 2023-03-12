@@ -31,11 +31,12 @@ Partial Class CreateUser
         Me.comboUserType = New System.Windows.Forms.ComboBox()
         Me.lblUserType = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(104, 97)
+        Me.txtPassword.Location = New System.Drawing.Point(105, 88)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(144, 23)
         Me.txtPassword.TabIndex = 49
@@ -57,7 +58,7 @@ Partial Class CreateUser
         'lblId
         '
         Me.lblId.AutoSize = True
-        Me.lblId.Location = New System.Drawing.Point(41, 30)
+        Me.lblId.Location = New System.Drawing.Point(42, 33)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(17, 15)
         Me.lblId.TabIndex = 45
@@ -65,7 +66,7 @@ Partial Class CreateUser
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(41, 175)
+        Me.btnSubmit.Location = New System.Drawing.Point(42, 161)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(75, 25)
         Me.btnSubmit.TabIndex = 44
@@ -84,7 +85,7 @@ Partial Class CreateUser
         'comboUserType
         '
         Me.comboUserType.FormattingEnabled = True
-        Me.comboUserType.Location = New System.Drawing.Point(105, 137)
+        Me.comboUserType.Location = New System.Drawing.Point(105, 117)
         Me.comboUserType.Name = "comboUserType"
         Me.comboUserType.Size = New System.Drawing.Size(144, 23)
         Me.comboUserType.TabIndex = 42
@@ -92,7 +93,7 @@ Partial Class CreateUser
         'lblUserType
         '
         Me.lblUserType.AutoSize = True
-        Me.lblUserType.Location = New System.Drawing.Point(41, 140)
+        Me.lblUserType.Location = New System.Drawing.Point(42, 120)
         Me.lblUserType.Name = "lblUserType"
         Me.lblUserType.Size = New System.Drawing.Size(57, 15)
         Me.lblUserType.TabIndex = 41
@@ -101,17 +102,27 @@ Partial Class CreateUser
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(41, 100)
+        Me.lblPassword.Location = New System.Drawing.Point(41, 91)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(57, 15)
         Me.lblPassword.TabIndex = 40
         Me.lblPassword.Text = "Password"
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(174, 163)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 50
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'CreateUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(292, 243)
+        Me.ClientSize = New System.Drawing.Size(292, 200)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.txtId)
@@ -137,4 +148,5 @@ Partial Class CreateUser
     Friend WithEvents comboUserType As ComboBox
     Friend WithEvents lblUserType As Label
     Friend WithEvents lblPassword As Label
+    Friend WithEvents btnBack As Button
 End Class

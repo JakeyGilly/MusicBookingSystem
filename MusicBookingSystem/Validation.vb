@@ -17,16 +17,16 @@
         Return value1 = value2
     End Function
     ' The minimum length check function checks if a value is at least a certain length
-    Function MinimumLengthCheck(value As String, minimumLength As Integer)
+    Public Shared Function MinimumLengthCheck(value As String, minimumLength As Integer)
         Return value.Length >= minimumLength
     End Function
     ' The maximum length check function checks if a value is at most a certain length
-    Function MaximumLengthCheck(value As String, maximumLength As Integer)
+    Public Shared Function MaximumLengthCheck(value As String, maximumLength As Integer)
         Return value.Length <= maximumLength
     End Function
-    ' The length check function checks if a value is a certain length
-    Function RangeCheck(value As Integer, min As Integer, max As Integer)
-        Return value > min And value < max
+    ' The range check function checks if a value is between two numbers
+    Public Shared Function RangeCheck(value As Integer, min As Integer, max As Integer)
+        Return value >= min And value <= max
     End Function
     ' The format check function checks if a value matches a certain pattern
     Function FormatCheck(value As String, pattern As String)
